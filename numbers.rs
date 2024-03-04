@@ -111,6 +111,45 @@ fn print_sum(){
 
 }
 
+
+// Fill the blanks
+use std::ops::{Range, RangeInclusive};
+fn range_1() {
+    assert_eq!((1..5), Range{ start: 1, end: 5 });
+    assert_eq!((1..=5), RangeInclusive::new(1, 5));
+
+    println!("Success!");
+}
+
+
+// Fill the blanks and fix the errors
+fn computations() {
+    // Integer addition
+    assert!(1u32 + 2u32 == 3u32);
+
+    // Integer subtraction
+    assert!(1i32 - 2i32 == -1i32);
+    assert!(1i32 - 2i32 == -1i32); 
+    
+    assert!(3i32 * 50i32 == 150i32);
+
+    assert!(9.6f32 / 3.2f32 == 3.0f32); // error ! make it work
+
+    assert!(24 % 5 == 4);
+    // Short-circuiting boolean logic
+    assert!(true as bool && false as bool == false as bool);
+    assert!(true as bool || false as bool == true as bool);
+    assert!(!true as bool == false as bool);
+
+    // Bitwise operations
+    println!("0011 AND 0101 is {:04b}", 0b0011u32 & 0b0101);
+    println!("0011 OR 0101 is {:04b}", 0b0011u32 | 0b0101);
+    println!("0011 XOR 0101 is {:04b}", 0b0011u32 ^ 0b0101);
+    println!("1 << 5 is {}", 1u32 << 5);
+    println!("0x80 >> 2 is 0x{:x}", 0x80u32 >> 2);
+}
+
+
 fn main() {
     destructuring_assignment();
     unused_variable();
@@ -122,6 +161,8 @@ fn main() {
     addition();
     floating_point();
     assert_fix(); 
+    print_sum();
+    computations();
     println!("Success from main!");
 }
 
