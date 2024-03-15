@@ -1,5 +1,6 @@
 fn main() {
-    example_enum_with_data();
+    // example_enum_with_data();
+    example_enum_with_function();
 }
 
 
@@ -21,4 +22,15 @@ fn example_enum_with_data(){
     }
 
     println!("Btw the size of Address is {} bytes", std::mem::size_of::<Address>());
+}
+
+fn example_enum_with_function(){
+    let favnum: Option<i32>;
+
+    favnum = Option:: Some(107);
+
+    match favnum {
+        Some(n) => println!("My favorite number is {}, good choice", n),
+        None => println!("What is the fuchka?"),
+    }
 }
