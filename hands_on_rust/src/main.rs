@@ -1,7 +1,8 @@
 fn main() {
     // example_enum_with_data();
     // example_enum_with_function();
-    example_vec();
+    // example_vec();
+    Example_vec_bounds_checking(0);
 }
 
 
@@ -50,9 +51,26 @@ fn example_vec(){
 
     let mut vec2 = vec!["Dhaka", "Barisal", "khulna"];
 
-    vec2.insert(0, "Rajshahi");
+    vec2.insert(1, "Rajshahi");
 
     for item in vec2 {
         println!("{}", item);
     }
 }
+
+fn Example_vec_bounds_checking(index: usize){
+    println!("\nVector bounds-checking");
+
+    let vec = [100, 99, 98];
+
+    let opt = vec.get(index);
+
+    match opt {
+        Some(value) => println!("At index {}, found value {}", index, vec[index]),
+        None => println!("At index {}, no value found", index),
+    }
+
+
+}
+
+
