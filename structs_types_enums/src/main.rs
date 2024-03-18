@@ -29,8 +29,8 @@ struct User{
 }
 
 impl User{
-    fn new(username: String, email: String, uri: String) -> User{
-        User{
+    fn new(username: String, email: String, uri: String) -> Self{
+        Self{
             username,
             email,
             uri,
