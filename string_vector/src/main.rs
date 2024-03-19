@@ -7,6 +7,29 @@ fn variable_type(){
 
 fn string_slice(sentence: &str){
     println!("{}", &sentence[0..=4]);
+
+    let res = format!("Title: Quick story\n{}", sentence);
+
+    for c in sentence.chars(){
+        match c {
+            'a' | 'e' | 'i' | 'o' | 'u' => println!("Got a vowel!"),
+            _ => continue,
+        }
+    }
+
+    // For spliting and collect into a vector
+    // Step-1:
+    let words: Vec<&str> = sentence.split_whitespace().collect();
+    println!("{:#?}", words);
+
+    // Step-2:
+    let words1 = sentence.split(' ').collect::<Vec<&str>>();
+    println!("Words1 \n {:#?}", words1);
+
+
+    // Reversing the sentence
+    let reversed = sentence.chars().rev().collect::<String>();
+    println!("Reversed: {:#?} \n", reversed);
 }
 
 fn print_str(s: &str){
@@ -36,6 +59,7 @@ fn main() {
     // variable_type();
     let sentence = "the quick brown fox jumps over the lazy dog";
     string_slice(sentence);
+
     println!("Execution Compeleted!");
 }
 
