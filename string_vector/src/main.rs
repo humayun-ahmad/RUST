@@ -80,6 +80,26 @@ fn print_string(s: String){
     println!("{}", s);
 }
 
+fn adding_elements_to_vector(){
+    let mut v = vec![1, 2, 3];
+    v.push(4);
+    //println!("{:?}", v); // Output: [1, 2, 3, 4]
+
+    // extend adds each element of the given slice to the vector
+    let more_numbers = vec![5, 6];
+    v.extend(more_numbers);
+    //println!("{:?}", v);
+
+    // append adds the given vector to the vector, requires the vector to be mutable
+    let mut other_numbers = vec![7, 8];
+    v.append(&mut other_numbers);
+    println!("{:?}", v);
+
+    // insert items at a given index
+    v.insert(0, 0);
+    println!("{:?}", v); // Output: [0, 1, 2, 3, 4, 5, 6, 7, 8] 
+}
+
 fn main() {
     let s = "Hello world";
     // print_str(s);
@@ -92,8 +112,23 @@ fn main() {
     // string_slice(sentence);
 
     let vec = vec![1, 2, 3, 4, 5];
-    get_item(3);
+    // get_item(3);
 
+    // Retrieve a value at a specific index
+    let third_value = vec[2];
+    println!("The third value in the vector is: {}", third_value);
+
+    // Retrieve the last value
+    let last_value = vec.last().unwrap();
+    println!("The last value in the vector is: {}", last_value);
+
+    // Retrieve the first value using pattern matching
+    match vec.first() {
+        Some(first_value) => println!("The first value in the vector is: {}", first_value),
+        None => println!("The vector is empty!"),
+    }
+
+    adding_elements_to_vector();
     println!("Execution Compeleted!");
 }
 
