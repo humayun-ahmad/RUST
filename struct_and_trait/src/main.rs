@@ -1,3 +1,4 @@
+
 fn main() {
     // example_creating_using_struct();
     example_struct_and_functions();
@@ -62,3 +63,7 @@ fn build_employee_v2 (name: String, salary: u64, fulltime: bool)-> Employee{
 fn print_employee(emp: &Employee){
     println!("{} earns {}, fulltime status: {}", emp.name, emp.salary, emp.fulltime);
 }
+
+
+
+

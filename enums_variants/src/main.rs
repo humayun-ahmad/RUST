@@ -2,7 +2,7 @@
 // use std::any::type_name_of_val;
 
 // Define an enum representing different shapes
-enum Shape {
+enum Shape1 {
     Circle(f64), // Radius of a circle
     Square(f64), // Length of one side for a square
 }
@@ -94,6 +94,12 @@ fn format_size(size: u64) -> String {
     }
 }
 
+enum Shape{
+    Circle(f64),
+    Square(f64),
+}
+
+
 
 fn main() {
     // format_size
@@ -140,7 +146,15 @@ fn main() {
     //-------------------------------------------------------
 
 
-    let result = format_size(6888837399);
-    println!("{}", result)
+    // let result = format_size(6888837399);
+    // println!("{}", result)
 
+    let shapes = vec![Shape::Circle(5.0), Shape::Square(3.0)];
+
+    let total_area : f64 = shapes.iter().map(|shape|match shape{
+        Shape::Circle(radious) => std::f64::consts::PI * radious * radious,
+        Shape::Square(length) => length * length,
+    }).sum();
+
+    println!("Totoal area : {} sq. units", total_area);
 }

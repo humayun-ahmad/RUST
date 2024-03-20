@@ -37,17 +37,27 @@ impl User{
             active: true,
         }
     }
+
+    fn deactivate(&mut self){
+        self.active = false;
+    }
 }
 
 
 fn associated_constructors(){
-    let new_user = User::new(
+    let mut new_user = User::new(
         String::from("Rajib"),
         String::from("rajib@example.com"),
         String::from("http://rajib.com"),
     );
 
     println!("Hello {}", new_user.username);
+    println!("Acount {} status is : {}", new_user.username, new_user.active);
+    new_user.deactivate();
+    println!("Acount {} status is : {}", new_user.username, new_user.active);
+    
+
+    
 }
 
 fn main() {
