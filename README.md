@@ -6,6 +6,10 @@
 cargo init --lib .
 ```
 
+2. For new rust project
+```
+cargo new <project name>
+
 
 
 ### Key Terms
