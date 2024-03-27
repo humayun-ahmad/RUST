@@ -14,7 +14,7 @@ cargo new <project name>
 
 ### Key Terms
 
-`Struct:` A keyword used to organize similar data in a structure. It is like an object in JavaScript or Python dictionary where you are organizing data in a structured way.
+`Struct`: A keyword used to organize similar data in a structure. It is like an object in JavaScript or Python dictionary where you are organizing data in a structured way.
 
 `Field:` The values of the struct, such as first name and last name string for person struct.
 
