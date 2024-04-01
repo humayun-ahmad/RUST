@@ -14,9 +14,12 @@ fn main() {
     {
         change(&mut s2);
     }
+
     let r2 = change(&mut s2);
+
     println!("The string is: {}", s2);
 
+    another_function();
 
 }
 
@@ -34,3 +37,15 @@ fn calculate_length(s: &String) -> usize {
 
 //     (s,length)
 // }
+
+
+fn another_function(){
+    let mut s = String::from("hello");
+
+    let r1 = &s; // no problem
+    let r2 = &s; // no problem
+    // let r3 = &mut s; // BIG PROBLEM
+
+    // println!("{}, {}, and {}", r1, r2, r3);
+    println!("{}, {}", r1, r2);
+}
