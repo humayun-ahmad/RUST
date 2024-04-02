@@ -1,5 +1,5 @@
 fn main() {
-    let s1 = String::from("Hello");
+    let s1 = String::from("Hello world");
 
     // let (s2, len): (String, usize) = calculate_length(s1);
 
@@ -21,9 +21,19 @@ fn main() {
 
     // another_function();
 
-    let s3 = first_word(&s2);
+    // let s3 = first_word(&s2);
 
-    println!("{s3}");
+    // println!("{s3}");
+
+    // second_word();
+
+    let s4 = first_word_update(&s1);
+
+    println!("Result is : {s4}\n");
+
+    println!("immutable_borrow is calling now!");
+
+    immutable_borrow();
 
 }
 
@@ -66,4 +76,46 @@ fn first_word(s: &String) -> usize {
     }
 
     s.len()
+}
+
+fn second_word() {
+    let s = String::from("hello");
+
+    let len = s.len();
+
+    let slice1 = &s[0..2];
+    let slice1 = &s[..2];
+
+
+    let slice2 = &s[3..len];
+    let slice2 = &s[3..];
+
+    let slice3 = &s[0..len];
+    let slice3 = &s[..];
+
+    println!("Slice 1 : {slice1}, Slice 2 : {slice2}, Slice 3 : {slice3}");
+}
+
+fn first_word_update(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
+}
+
+fn immutable_borrow() {
+    let mut s = String::from("hello world");
+
+    let word = first_word_update(&s);
+
+    // s.clear(); // error!
+
+    println!("the first word is: {}", word);
+
+    println!("immutable_borrow has finished!");
 }
