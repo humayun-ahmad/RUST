@@ -5,21 +5,25 @@ fn main() {
 
     // println!("The length of '{}' is {}.", s2, len);
 
-    let len = calculate_length(&s1);
+    // let len = calculate_length(&s1);
 
-    println!("The length of '{}' is {}.", s1, len);
+    // println!("The length of '{}' is {}.", s1, len);
 
 
     let mut s2 = s1.clone();
-    {
-        change(&mut s2);
-    }
+    // {
+    //     change(&mut s2);
+    // }
 
-    let r2 = change(&mut s2);
+    // let r2 = change(&mut s2);
 
-    println!("The string is: {}", s2);
+    // println!("The string is: {}", s2);
 
-    another_function();
+    // another_function();
+
+    let s3 = first_word(&s2);
+
+    println!("{s3}");
 
 }
 
@@ -50,4 +54,16 @@ fn another_function(){
     let r3 = &mut s; // no problem
     println!("{r3}");
     
+}
+
+fn first_word(s: &String) -> usize {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return i;
+        }
+    }
+
+    s.len()
 }
