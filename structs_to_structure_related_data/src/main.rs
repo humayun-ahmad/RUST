@@ -19,4 +19,18 @@ fn main() {
     user1.active = false;
 
     // println!("{:?}", user1)
+
+    let user2 = build_user(String::from("email@gmail.com"), String::from("email"));
+
+    println!("{}", user2.email);
+}
+
+
+fn build_user(email: String, username: String) -> User {
+    User {
+        active: true,
+        username,
+        email,
+        sign_in_count: 1,
+    }
 }
