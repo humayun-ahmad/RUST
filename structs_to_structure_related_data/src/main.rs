@@ -20,9 +20,27 @@ fn main() {
 
     // println!("{:?}", user1)
 
-    let user2 = build_user(String::from("email@gmail.com"), String::from("email"));
+    let user3 = build_user(String::from("email@gmail.com"), String::from("email"));
 
-    println!("{}", user2.email);
+    println!("{}", user3.email);
+
+    let user2 = User {
+        active: user3.active,
+        username: user3.username,
+        email: String::from("another@example.com"),
+        sign_in_count: user1.sign_in_count,
+    };
+
+    println!("{}", user2.username);
+
+    let user4 = User {
+        email: String::from("another@example.com"),
+        ..user1
+    };
+
+
+    println!("Username: {}", user4.username);
+
 }
 
 
