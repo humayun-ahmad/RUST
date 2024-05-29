@@ -12,6 +12,8 @@ Cargo is Rust's build system and package manager. Here are some basic commands t
 - **Check for errors without building**: `cargo check`
 - **Create a library package**: `cargo init --lib .`
 
+_**Note**_ TOML = Tom's Obvious, Minimal Language
+
 ## Key Terms in Rust
 
 - **Struct**: Organize similar data in a structure, akin to objects in JavaScript or Python dictionaries.
